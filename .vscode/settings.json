@@ -1,0 +1,8 @@
+{
+    "editor.insertSpaces": false,
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "stdarg.h": "c",
+        "main.h": "c"
+    }
+}

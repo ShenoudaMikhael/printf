@@ -1,0 +1,24 @@
+#include "main.h"
+#include <stdarg.h>
+
+/**
+ * p_str - print int
+ * @a: vaglist
+ * Return: Nothing
+ */
+int print_str(va_list args)
+{
+	char *str = va_arg(args, char *);
+	int strlen = 0;
+
+	if (str)
+	{
+		strlen = _strlen(str);
+		while (str[0] != '\0')
+		{
+			_putchar(str[0]);
+			str++;
+		}
+	}
+	return (strlen);
+}
