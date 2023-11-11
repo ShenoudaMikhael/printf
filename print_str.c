@@ -2,9 +2,9 @@
 #include <stdarg.h>
 
 /**
- * p_str - print int
- * @a: vaglist
- * Return: Nothing
+ * print_str - print int
+ * @args: vaglist
+ * Return: length
  */
 int print_str(va_list args)
 {

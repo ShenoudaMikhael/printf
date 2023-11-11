@@ -1,9 +1,15 @@
 #include "main.h"
 #include <stdarg.h>
 
+/**
+ * print_char - Entry point
+ * @args: va_list
+ * Return: Always 1
+ */
 int print_char(va_list args)
-{	
-	
-	_putchar(va_arg(args, int));
-	return(1);
+{
+	char a = va_arg(args, int);
+
+	_putchar(a);
+	return (sizeof(a));
 }

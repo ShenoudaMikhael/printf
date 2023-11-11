@@ -1,8 +1,13 @@
 #include "main.h"
 #include <stdarg.h>
-
-int print_mod()
+/**
+ * print_mod - print int
+ *
+ * Return: none.
+ */
+void print_mod(void)
 {
-	_putchar('%');
-	return (1);
+	char q = '%';
+
+	_putchar(q);
 }
