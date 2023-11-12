@@ -11,14 +11,15 @@ int print_str(va_list args)
 	char *str = va_arg(args, char *);
 	int strlen = 0;
 
-	if (str)
+	if (!str)
+		str = "(nil)";
+	strlen = _strlen(str);
+
+	while (str[0] != '\0')
 	{
-		strlen = _strlen(str);
-		while (str[0] != '\0')
-		{
-			_putchar(str[0]);
-			str++;
-		}
+		_putchar(str[0]);
+		str++;
 	}
+
 	return (strlen);
 }
