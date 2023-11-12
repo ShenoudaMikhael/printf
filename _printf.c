@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	len = 0;
 	va_start(args, format);
-	
+	len = _format(format, args);
 	va_end(args);
 	return (len);
 }
