@@ -5,9 +5,10 @@
  *
  * Return: none.
  */
-void print_mod(void)
+int print_mod(void)
 {
 	char q = '%';
 
 	_putchar(q);
+	return (1);
 }

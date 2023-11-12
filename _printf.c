@@ -28,22 +28,21 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-
+			i++;
 			q = 0;
 			while (fmt[q].t != '\0')
 			{
-				if (fmt[q].t == format[i + 1])
+				if (fmt[q].t == format[i])
 				{
 					len += ((fmt[q]).f(args));
 				}
-				else if (format[i + 1] == '%')
+				else if (format[i] == '%')
 				{
-					print_mod();
-					len++;
+					len += print_mod();
+					i++;
 				}
 				q++;
 			}
-			i++;
 		}
 		else
 			_putchar(format[i]);

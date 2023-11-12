@@ -16,7 +16,7 @@ int _putchar(char c);
 int print_number(va_list args);
 int print_char(va_list args);
 int print_str(va_list args);
-void print_mod(void);
+int print_mod(void);
 int _strlen(char *s);
 
 int _printf(const char *format, ...);

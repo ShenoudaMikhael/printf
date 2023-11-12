@@ -11,5 +11,5 @@ int print_char(va_list args)
 	char a = va_arg(args, int);
 
 	_putchar(a);
-	return (sizeof(a));
+	return (1);
 }
