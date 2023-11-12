@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stdio.h>
 /**
  * print_str - print int
  * @args: vaglist
@@ -11,7 +12,7 @@ int print_str(va_list args)
 
 	int strlen = 0;
 
-	if (!str)
+	if (str == NULL)
 		str = "(null)";
 	strlen = _strlen(str);
 
