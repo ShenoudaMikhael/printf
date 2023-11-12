@@ -18,7 +18,7 @@ int print_char(va_list args);
 int print_str(va_list args);
 int print_mod(void);
 int _strlen(char *s);
-
+int _format(const char *format, va_list args);
 int _printf(const char *format, ...);
 
 #endif
