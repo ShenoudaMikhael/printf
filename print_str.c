@@ -8,7 +8,9 @@
 int print_str(va_list args)
 {
 	char *str = va_arg(args, char *);
+
 	int strlen = 0;
+
 	if (!str)
 		str = "(null)";
 	strlen = _strlen(str);
