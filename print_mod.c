@@ -5,9 +5,9 @@
  *
  * Return: none.
  */
-void print_mod(void)
+int print_mod()
 {
 	char q = '%';
-
 	_putchar(q);
+	return (1);
 }

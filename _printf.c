@@ -15,6 +15,7 @@ int _printf(const char *format, ...)
 	the_types fmt[] = {
 		{'c', print_char},
 		{'s', print_str},
+		{'%', print_mod},
 
 		{'\0', NULL}};
 	int len, q, i;
@@ -39,6 +40,7 @@ int _printf(const char *format, ...)
 				else if (format[i + 1] == '%')
 				{
 					print_mod();
+					break;
 					len++;
 				}
 				q++;
