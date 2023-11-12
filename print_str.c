@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
-
+#include <stdio.h>
 /**
  * print_str - print int
  * @args: vaglist
@@ -10,9 +10,9 @@ int print_str(va_list args)
 {
 	char *str = va_arg(args, char *);
 	int strlen = 0;
-
+	printf("s:%s/n", str);
 	if (!str)
-		str = "(nil)";
+		str = "(null)";
 	strlen = _strlen(str);
 
 	while (str[0] != '\0')
