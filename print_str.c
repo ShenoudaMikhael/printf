@@ -8,18 +8,18 @@
  */
 int print_str(va_list args)
 {
-	char *str = va_arg(args, char *);
-
+	char *str;
 	int strlen = 0;
+
+	str = va_arg(args, char *);
 
 	if (str == NULL)
 		str = "(null)";
-	strlen = _strlen(str);
 
-	while (str[0] != '\0')
+	while (str[strlen] != '\0')
 	{
-		_putchar(str[0]);
-		str++;
+		_putchar(str[strlen]);
+		strlen++;
 	}
 
 	return (strlen);
