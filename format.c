@@ -5,7 +5,7 @@ int _format(const char *format, va_list args)
 	the_types fmt[] = {
 		{'c', print_char}, {'s', print_str}, {'\0', NULL}};
 	int len, q, i;
-	
+
 	len = 0, i = 0;
 	while (format && format[i])
 	{
@@ -36,4 +36,5 @@ int _format(const char *format, va_list args)
 			len += _putchar(format[i]);
 		i++;
 	}
+	return (len);
 }
