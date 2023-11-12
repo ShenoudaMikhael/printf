@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 	the_types fmt[] = {
 		{'c', print_char},
 		{'s', print_str},
-
 		{'\0', NULL}};
 	int len, q, i;
 	va_list args;
@@ -26,28 +25,30 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format && format[i] != '\0')
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] == '%')
 		{
-			i++;
+			len += print_mod();
+			i += 2;
+		}
+		else if (format[i] == '%' && format[i + 1] != '%')
+		{
 			q = 0;
 			while (fmt[q].t != '\0')
 			{
-				if (fmt[q].t == format[i])
+				if (fmt[q].t == format[i + 1])
 				{
 					len += ((fmt[q]).f(args));
-				}
-				else if (format[i] == '%')
-				{
-					len += print_mod();
-					i++;
+					i += 2;
 				}
 				q++;
 			}
 		}
 		else
-			_putchar(format[i]);
-		i++;
+		{
+			len += _putchar(format[i]);
+			i++;
+		}
 	}
 	va_end(args);
-	return (i - 1 + len);
+	return (len);
 }
