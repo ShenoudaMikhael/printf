@@ -12,37 +12,14 @@
  */
 int _printf(const char *format, ...)
 {
-	the_types fmt[] = {
-		{'d', print_number},
-		{'c', print_char},
-		{'s', print_str},
-		{'%', print_mod},
-
-		{'\0', NULL}};
-	int len, q, i;
+	int len;
 	va_list args;
-	len = 0, i = 0;
-	va_start(args, format);
-	while (format && format[i] != '\0')
-	{
-		if (format[i] == '%')
-		{
-			q = 0;
-			while (fmt[q].t != '\0')
-			{
-				if (fmt[q].t == format[i + 1])
-				{
-					len += ((fmt[q]).f(args));
-					i++;
-				}
-				q++;
-			}
-		}
-		else
-			_putchar(format[i]);
 
-		i++;
-	}
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
+	len = 0;
+	va_start(args, format);
+	len = _format(format, args);
 	va_end(args);
-	return (i - 1 + len);
+	return (len);
 }

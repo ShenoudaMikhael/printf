@@ -13,7 +13,7 @@ typedef struct types
 	int (*f)(va_list);
 } the_types;
 int _putchar(char c);
-int print_number(va_list args);
+int print_numbers(va_list args);
 int print_char(va_list args);
 int print_str(va_list args);
 int print_mod(void);
