@@ -8,6 +8,6 @@
 void print_mod(void)
 {
 	char q = '%';
-	
+
 	_putchar(q);
 }
