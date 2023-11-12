@@ -16,7 +16,7 @@ int print_str(va_list args)
 	if (str == NULL)
 		str = "(null)";
 
-	while (str[strlen] != '\0')
+	while (str[strlen])
 	{
 		_putchar(str[strlen]);
 		strlen++;
