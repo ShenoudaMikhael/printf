@@ -21,9 +21,8 @@ int _printf(const char *format, ...)
 		return (-1);
 	len = 0, i = 0;
 	va_start(args, format);
-	while (format && format[i] != '\0')
+	while (format && format[i])
 	{
-
 		if (format[i] == '%' && format[i + 1] == '%')
 		{
 			len += print_mod();
@@ -31,6 +30,8 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%')
 		{
+			if (format[i + 1] == '\0')
+				return (-1);
 			q = 0;
 			while (fmt[q].t != '\0')
 			{
