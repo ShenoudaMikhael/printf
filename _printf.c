@@ -28,9 +28,9 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1] == '%')
 		{
 			len += print_mod();
-			i += 2;
+			i += 1;
 		}
-		else if (format[i] == '%' && format[i + 1] != '%')
+		else if (format[i] == '%')
 		{
 			q = 0;
 			while (fmt[q].t != '\0')
@@ -38,16 +38,18 @@ int _printf(const char *format, ...)
 				if (fmt[q].t == format[i + 1])
 				{
 					len += ((fmt[q]).f(args));
-					i += 2;
+					i += 1;
 				}
+				
 				q++;
 			}
 		}
 		else
 		{
 			len += _putchar(format[i]);
-			i++;
+			
 		}
+		i++;
 	}
 	va_end(args);
 	return (len);
