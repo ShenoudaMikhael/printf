@@ -1,5 +1,11 @@
 #include "main.h"
 #include <stddef.h>
+/**
+ * _format - function
+ * @format: check input
+ * @args: check input
+ * Return: value
+*/
 int _format(const char *format, va_list args)
 {
 	the_types fmt[] = {
