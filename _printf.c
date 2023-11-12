@@ -23,15 +23,16 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format && format[i])
 	{
-		if (format[i] == '%' && format[i + 1] == '%')
+		if (format[i] == '%')
 		{
-			len += print_mod();
-			i += 1;
-		}
-		else if (format[i] == '%')
-		{
-			if (format[i + 1] == '\0')
-				return (-1);
+			while (format[i + 1] == ' ')
+				i++;
+			if (format[i + 1] == '%')
+			{
+				len += print_mod();
+				i += 2;
+				continue;
+			}
 			q = 0;
 			while (fmt[q].t != '\0')
 			{
@@ -42,11 +43,11 @@ int _printf(const char *format, ...)
 				}
 				q++;
 			}
+			if (fmt[q].t == '\0' && format[i] == '%')
+				len += print_mod();
 		}
 		else
-		{
 			len += _putchar(format[i]);
-		}
 		i++;
 	}
 	va_end(args);
