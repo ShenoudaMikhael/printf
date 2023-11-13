@@ -1,10 +1,9 @@
 #include "main.h"
 /**
- * print_numbers - function
- * @list: check input
- * Return: value
+ * print_number - function
+ * @n: check input
 */
-int print_numbers(va_list list)
+int print_dec(va_list list)
 {
 int n, len, i = 1;
 unsigned int num;

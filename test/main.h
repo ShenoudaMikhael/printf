@@ -14,6 +14,7 @@ typedef struct types
 } the_types;
 int _putchar(char c);
 int print_numbers(va_list args);
+int print_dec(va_list args);
 int print_char(va_list args);
 int print_str(va_list args);
 int print_mod(void);
