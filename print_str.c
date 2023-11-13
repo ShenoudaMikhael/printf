@@ -4,6 +4,7 @@
 /**
  * print_str - print int
  * @args: vaglist
+ * @r: check input
  * Return: length
  */
 int print_str(va_list args, int r)
