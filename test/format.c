@@ -18,7 +18,13 @@ int _format(const char *format, va_list args)
 		if (format[i] == '%')
 		{
 			while (format[i + 1] == ' ')
+			{
 				i++;
+				if (format[i + 1] == 'd' || format[i + 1] == 'i')
+				{
+					_putchar(32);
+				}
+			}
 			if (format[i + 1] == '%')
 			{
 				len += print_mod();
