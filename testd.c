@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_dec - function
+ * print_number - function
  * @list: check input
  * Return: value
 */

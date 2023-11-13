@@ -5,25 +5,39 @@
 */
 int print_dec(va_list list)
 {
-int n, len, i = 1;
-unsigned int num;
-n = va_arg(list, int);
-len = 0;
+int n = va_arg(list, int);
+int len = 1;
+int i = 1;
+int num, last, digit;
+last = n % 10;
+n = n / 10;
+num = n;
 
-if (n < 0)
+if (last < 0)
 {
 _putchar('-');
 num = -n;
-}
-else
-num = n;
-while (num / i > 9)
-i *= 10;
-while (i > 0)
-{
-_putchar((num / i) % 10 + '0');
+n = -n;
+last = -last;
 len++;
-i /= 10;
 }
+if (num > 0)
+{
+	while (num / 10 != 0)
+	{
+		i *= 10;
+		num /= 10;
+	}
+	num = n;
+	while (i > 0)
+	{
+		digit = num / i;
+			_putchar(digit + '0');
+			num = num - (digit * i);
+			i /= 10;
+			len++;
+	}
+}
+_putchar(last + '0');
 return (len);
 }

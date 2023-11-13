@@ -9,7 +9,7 @@
 int _format(const char *format, va_list args)
 {
 	the_types fmt[] = {
-		{'c', print_char}, {'s', print_str}, {'i', print_numbers}, {'d', print_numbers},
+		{'c', print_char}, {'s', print_str}, {'i', print_numbers}, {'d', print_dec},
 		{'\0', NULL}};
 	int len, q, i;
 
