@@ -1,21 +1,29 @@
 #include "main.h"
+#include "stdio.h"
 /**
  * print_numbers - function
  * @list: check input
  * Return: value
  */
-int print_numbers(va_list list)
+int print_numbers(va_list list, int r)
 {
 	int n, len, i = 1;
-	int num;
+	unsigned int num;
 
 	n = va_arg(list, int);
 	len = 0;
+
+	if (r > 0 && n > 0)
+	{
+		_putchar(' ');
+		len++;
+	}
 
 	if (n < 0)
 	{
 		_putchar('-');
 		num = -n;
+		len++;
 	}
 	else
 		num = n;

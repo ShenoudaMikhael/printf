@@ -6,10 +6,11 @@
  * @args: va_list
  * Return: Always 1
  */
-int print_char(va_list args)
+int print_char(va_list args, int r)
 {
 	char a = va_arg(args, int);
-
+	if (r > 0)
+		r = 0;
 	_putchar(a);
 	return (1);
 }

@@ -6,13 +6,14 @@
  * @args: vaglist
  * Return: length
  */
-int print_str(va_list args)
+int print_str(va_list args, int r)
 {
 	char *str;
 	int strlen = 0;
 
 	str = va_arg(args, char *);
-
+	if (r > 0)
+		r = 0;
 	if (str == NULL)
 		str = "(null)";
 
