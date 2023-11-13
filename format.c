@@ -9,7 +9,8 @@
 int _format(const char *format, va_list args)
 {
 	the_types fmt[] = {
-		{'c', print_char}, {'s', print_str}, {'i', print_numbers}, {'d', print_numbers}, {'\0', NULL}};
+		{'c', print_char}, {'s', print_str}, {'i', print_numbers},
+		{'d', print_numbers}, {'\0', NULL}};
 	int len, q, i, r;
 
 	len = 0, i = 0, r = 0;
@@ -20,10 +21,6 @@ int _format(const char *format, va_list args)
 			while (format[i + 1] == ' ')
 			{
 				i++, r++;
-				if (format[i + 1] == 'd' || format[i + 1] == 'i')
-				{
-					
-				}
 			}
 			if (format[i + 1] == '%')
 			{
