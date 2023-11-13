@@ -5,12 +5,12 @@
  * @format: check input
  * @args: check input
  * Return: value
-*/
+ */
 int _format(const char *format, va_list args)
 {
 	the_types fmt[] = {
-		{'c', print_char}, {'s', print_str}, {'i', print_numbers}, {'d', print_numbers},
-		{'\0', NULL}};
+		{'c', print_char}, {'s', print_str},
+		{'i', print_numbers}, {'d', print_numbers}, {'\0', NULL}};
 	int len, q, i;
 
 	len = 0, i = 0;
