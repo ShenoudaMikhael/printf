@@ -5,7 +5,7 @@
  * @format: check input
  * @args: check input
  * Return: value
-*/
+ */
 int _format(const char *format, va_list args)
 {
 	the_types fmt[] = {
@@ -23,6 +23,7 @@ int _format(const char *format, va_list args)
 				if (format[i + 1] == 'd' || format[i + 1] == 'i')
 				{
 					_putchar(32);
+					len++;
 				}
 			}
 			if (format[i + 1] == '%')
