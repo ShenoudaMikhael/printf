@@ -3,6 +3,7 @@
 /**
  * print_numbers - function
  * @list: check input
+ * @r: check input
  * Return: value
  */
 int print_numbers(va_list list, int r)
