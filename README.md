@@ -27,6 +27,5 @@ int main(void){
 
 ## Authors
 
-- [@Salsabil Ahamed](https://github.com/salsapil)
 - [@Shenouda Mikhael](https://github.com/shenoudaMikhael)
-
+- [@Salsabil Ahamed](https://github.com/salsapil)
